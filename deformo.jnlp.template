@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+  spec="1.0+"
+  codebase="@codebase@"
+  href="@jnlphref@">
+  <information>
+    <title>Deformo</title>
+    <vendor>Radityopw</vendor>
+    <description>Deformo UML Editor</description>
+    <offline-allowed/>
+  </information>  
+  <resources>
+    <j2se version="1.4+"/>
+    <jar href="@jarhref@"/>
+    <property name="apple.laf.useScreenMenuBar" value="true"/>
+  </resources>
+  <application-desc/>
+</jnlp> 

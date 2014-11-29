@@ -2,9 +2,9 @@
 
    <property file="build.properties" />
    <property name="srcdir" value="${basedir}" />
-   <property name="classdir" value="${basedir}" />
-   <property name="jnlpfile" value="violet.jnlp" />
-   <property name="version.properties" value="com/horstmann/violet/UMLEditorVersion.properties" />
+   <property name="classdir" value="${basedir}/classes" />
+   <property name="jnlpfile" value="deformo.jnlp" />
+   <property name="version.properties" value="com/deformo/shared/UMLEditorVersion.properties" />
    
    <path id="classpath">
       <pathelement location="${srcdir}" />
@@ -15,7 +15,7 @@
       <tstamp>
          <format property="version.date" pattern="yyyy-MM-dd" locale="en"/>
       </tstamp>
-      <property name="appname" value="violet-${version.number}" />
+      <property name="appname" value="deformo-${version.number}" />
       <property name="jarfile" value="${appname}.jar" />
    </target>
 
@@ -29,6 +29,7 @@
    </target>
    
    <target name="compile" depends="props" description="Compile source files.">
+      <mkdir dir="${classdir}" />
       <javac srcdir="${srcdir}" destdir="${classdir}" debug="true" deprecation="true" source="1.4" target="1.4">
          <include name="**/*.java" />
          <classpath refid="classpath" />
@@ -39,10 +40,10 @@
       <delete file="${jarfile}" />
       <jar jarfile="${jarfile}">
          <manifest>
-            <attribute name="Main-Class" value="com.horstmann.violet.UMLEditor" />
+            <attribute name="Main-Class" value="com.deformo.shared.UMLEditor" />
          </manifest>
          <fileset dir="${basedir}">
-            <include name="violet.jnlp.template" />
+            <include name="deformo.jnlp.template" />
             <include name="build.xml" />
             <include name="build.properties" />
             <include name="com/**" />
@@ -70,6 +71,11 @@
          <fileset dir="${basedir}" includes="**/*.jar" />
          <fileset dir="${basedir}" includes="${jnlpfile}" />
       </delete>
+      <delete dir="${classdir}" />
+   </target>
+   
+   <target name="run" depends="init">
+        <java jar="${jarfile}" fork="true"/>
    </target>
    
 </project>
