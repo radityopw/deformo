@@ -49,6 +49,9 @@
             <include name="com/**" />
             <exclude name="**/CVS/**" />
          </fileset>
+         <fileset dir="${classdir}">
+            <include name="com/**" /> 
+         </fileset>
       </jar>
    </target>
    
