@@ -20,18 +20,17 @@
 
 package com.deformo.shared;
 
-import com.deformo.graph.UseCaseDiagramGraph;
-import com.deformo.graph.SequenceDiagramGraph;
-import com.deformo.graph.ClassDiagramGraph;
-import com.deformo.graph.ObjectDiagramGraph;
-import com.deformo.graph.StateDiagramGraph;
-import java.io.IOException;
-import java.net.URL;
-
-import javax.swing.JApplet;
-
 import com.deformo.framework.EditorFrame;
 import com.deformo.framework.VersionChecker;
+import com.deformo.graph.ClassDiagramGraph;
+import com.deformo.graph.ERDGraph;
+import com.deformo.graph.ObjectDiagramGraph;
+import com.deformo.graph.SequenceDiagramGraph;
+import com.deformo.graph.StateDiagramGraph;
+import com.deformo.graph.UseCaseDiagramGraph;
+import java.io.IOException;
+import java.net.URL;
+import javax.swing.JApplet;
 
 
 /**
@@ -83,6 +82,7 @@ public class UMLEditor extends JApplet
       frame.addGraphType("state_diagram", StateDiagramGraph.class);
       frame.addGraphType("object_diagram", ObjectDiagramGraph.class);
       frame.addGraphType("usecase_diagram", UseCaseDiagramGraph.class);
+      frame.addGraphType("er_diagram",ERDGraph.class);
       return frame;
    }
    
