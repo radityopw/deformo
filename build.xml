@@ -77,7 +77,7 @@
       <delete dir="${classdir}" />
    </target>
    
-   <target name="run" depends="init">
+   <target name="run" depends="all">
         <java jar="${jarfile}" fork="true"/>
    </target>
    
