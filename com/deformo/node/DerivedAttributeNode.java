@@ -10,6 +10,7 @@ import com.deformo.framework.RectangularNode;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Shape;
+import java.awt.Stroke;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
@@ -37,8 +38,10 @@ public class DerivedAttributeNode extends RectangularNode {
                         BasicStroke.CAP_BUTT,
                         BasicStroke.JOIN_MITER,
                         10.0f, dash1, 0.0f);
+        Stroke def = g2.getStroke();
         g2.setStroke(dashed);
         g2.draw(getShape());
+        g2.setStroke(def);
         name.draw(g2, getBounds());
     }
 

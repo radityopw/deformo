@@ -26,11 +26,46 @@ public class RelationNode extends RectangularNode {
 
     public void draw(Graphics2D g2) {
         super.draw(g2);
-        Rectangle2D top = new Rectangle2D.Double(getBounds().getX(),
-                getBounds().getY(), getBounds().getWidth(),
-                getBounds().getHeight());
-        g2.rotate(Math.toRadians(45));
-        g2.draw(top);
+        int x1 = 0;
+        int y1 = 0;
+        
+        int x2 = 0;
+        int y2 = 0;
+        
+        x1 = (int) getBounds().getX();
+        y1 = (int) (getBounds().getY() + getBounds().getHeight() / 2);
+        
+        y2 = (int) getBounds().getY();
+        x2 = (int) (getBounds().getX() + getBounds().getWidth() / 2);
+        
+        g2.drawLine(x1, y1, x2, y2);
+        
+        x1 = (int) getBounds().getX();
+        y1 = (int) (getBounds().getY() + getBounds().getHeight() / 2);
+        
+        y2 = (int) getBounds().getMaxY();
+        x2 = (int) (getBounds().getX() + getBounds().getWidth() / 2);
+        
+        g2.drawLine(x1, y1, x2, y2);
+        
+        
+        x1 = (int) (getBounds().getX() + getBounds().getWidth() / 2);
+        y1 = (int) getBounds().getY();
+        
+        y2 = (int) (getBounds().getY() + getBounds().getHeight() / 2);
+        x2 = (int) (getBounds().getMaxX());
+        
+        g2.drawLine(x1, y1, x2, y2);
+        
+        
+        x1 = (int) (getBounds().getMaxX());
+        y1 = (int) (getBounds().getY() + getBounds().getHeight() / 2);
+        
+        y2 = (int) (getBounds().getMaxY());
+        x2 = (int) (getBounds().getX() + getBounds().getWidth() / 2);
+        
+        g2.drawLine(x1, y1, x2, y2);
+        
         name.draw(g2, getBounds());
     }
 
