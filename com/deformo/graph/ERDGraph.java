@@ -11,9 +11,12 @@ import com.deformo.edge.NoteEdge;
 import com.deformo.framework.Edge;
 import com.deformo.framework.Graph;
 import com.deformo.framework.Node;
+import com.deformo.node.AttributeNode;
+import com.deformo.node.DerivedAttributeNode;
 import com.deformo.node.EntityNode;
+import com.deformo.node.KeyAttributeNode;
+import com.deformo.node.MultivaluedAttributeNode;
 import com.deformo.node.NoteNode;
-import com.deformo.node.PackageNode;
 import com.deformo.node.WeakEntityNode;
 import com.deformo.shared.ArrowHead;
 import com.deformo.shared.BentStyle;
@@ -44,7 +47,7 @@ public class ERDGraph extends Graph {
       return EDGE_PROTOTYPES;
    }
 
-   private static final Node[] NODE_PROTOTYPES = new Node[4];
+   private static final Node[] NODE_PROTOTYPES = new Node[7];
 
    private static final Edge[] EDGE_PROTOTYPES = new Edge[7];
 
@@ -52,8 +55,11 @@ public class ERDGraph extends Graph {
    {
       NODE_PROTOTYPES[0] = new EntityNode();
       NODE_PROTOTYPES[1] = new WeakEntityNode();
-      NODE_PROTOTYPES[2] = new PackageNode();
-      NODE_PROTOTYPES[3] = new NoteNode();
+      NODE_PROTOTYPES[2] = new AttributeNode();
+      NODE_PROTOTYPES[3] = new KeyAttributeNode();
+      NODE_PROTOTYPES[4] = new MultivaluedAttributeNode();
+      NODE_PROTOTYPES[5] = new DerivedAttributeNode();
+      NODE_PROTOTYPES[6] = new NoteNode();
 
       ClassRelationshipEdge dependency = new ClassRelationshipEdge();
       dependency.setLineStyle(LineStyle.DOTTED);
