@@ -333,4 +333,3 @@ public class PropertySheet extends JPanel
    private static final int HEIGHT = 25;
    private static final int MAX_TEXT_LENGTH = 15;
 }
-
