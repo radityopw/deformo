@@ -25,7 +25,7 @@ public class RelationNode extends RectangularNode {
     }
 
     public void draw(Graphics2D g2) {
-        super.draw(g2);
+        //super.draw(g2);
         int x1 = 0;
         int y1 = 0;
         
